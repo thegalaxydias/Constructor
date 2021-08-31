@@ -30,14 +30,14 @@ public class User
 
 
 
-    public User(string r, string l, int p) {
+    public User(string r, string l, int p)
+    {
         role = r; login = l; password = p;
-        if (role == null || role == String.Empty)
-        {
 
-            role = "Unknown";
-        }
+        _= (role == null) || (role == String.Empty) ? role = "Unknown" : role = r;
+
     }
+    
 
 
 
