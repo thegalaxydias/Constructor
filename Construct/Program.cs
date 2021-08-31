@@ -9,12 +9,8 @@ class Program
 
     static void Main(string[] args)
     {
-        User tom = new User( "", "admin1", 12345);
-
+        User tom = new User( null, "admin1", 12345);
         tom.description();
-
-        User jack = new User( "admin" , 123);
-        jack.description();
 
         Console.ReadKey();
     }
@@ -31,22 +27,21 @@ public class User
 
 
 
-    public User(string r, string l, int p) { role = r; login = l; password = p; }
-    public User(string l, int p) { login = l; password = p; }
+    public User(string r, string l, int p) {
+        role = r; login = l; password = p;
+        if (role == null || role == String.Empty)
+        {
+
+            role = "Unknown";
+        }
+    }
 
 
 
 
     public void description()
-    {
-        if (role == null || role == String.Empty) 
-                {
-            
-            role = "Unknown";
-                 }
-                
-           
-        
+    {                     
+                 
         {
 
             Console.WriteLine($"Role: { role} \nLogin: { login} \nPassword: {password}");
