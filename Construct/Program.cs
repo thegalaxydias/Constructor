@@ -12,6 +12,9 @@ class Program
         User tom = new User( null, "admin1", 12345);
         tom.description();
 
+        User jack = new User("", "admin", 123);
+        jack.description();
+
         Console.ReadKey();
     }
 
